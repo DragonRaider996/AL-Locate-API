@@ -6,14 +6,15 @@ import { UserDTO } from './dto/user.dto';
 
 @Injectable()
 export class LoginService {
+  private userData: User;
 
   constructor(@InjectRepository(User) private userRepository: Repository<User>) { }
 
   async validateUser(user: UserDTO): Promise<boolean> {
-    user = await this.userRepository.findOne({
+    this.userData = await this.userRepository.findOne({
       where: { username: user.username, password: user.password }
     });
-    if (user) {
+    if (this.userData) {
       console.log(user)
       return true;
     } else {
