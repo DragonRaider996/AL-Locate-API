@@ -1,6 +1,7 @@
 export interface HospitalInterface {
-  id: String;
-  name: String;
-  hlat: Number;
-  hlong: Number;
+  id: number;
+  name: string;
+  hlat: number;
+  hlong: number;
+  waitingTime?: number;
 }
