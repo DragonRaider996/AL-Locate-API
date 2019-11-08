@@ -5,3 +5,4 @@ dist/*
 !/dist/v5
 /tmp
 /out-tsc
+ormconfig.json
