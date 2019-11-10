@@ -28,11 +28,9 @@ export class HospitalService {
         hlong: hospital.hlong,
         waitingTime: averageWaitingTime
       };
-      console.log(hospital.name + " " + distance);
       this.hospitalData.push(hospitalToSend);
     })
     this.hospitalData = sortBy(this.hospitalData, ['waitingTime']);
-    console.log(this.hospitalData);
     let tempData = this.hospitalData;
     this.hospitalData = [];
     tempData.forEach((hospital) => {

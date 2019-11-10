@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Put, Param, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Body, Put, Param, HttpException, HttpStatus, Query } from '@nestjs/common';
 import { HospitalService } from './hospital.service';
 import { LocationDTO } from './dto/location.dto';
 import { HospitalInterface } from './interface/listHospital.interface';

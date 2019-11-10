@@ -12,8 +12,7 @@ export class AuthenticationMiddleware implements NestMiddleware {
       try {
         const user: any = verify(token, secret);
         if (user) {
-          console.log(user);
-          req.body.user = user;
+          req.query.user = user;
           next();
         } else {
           throw new HttpException('User not found', HttpStatus.BAD_REQUEST);

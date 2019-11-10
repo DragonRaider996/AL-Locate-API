@@ -6,3 +6,4 @@ dist/*
 /tmp
 /out-tsc
 .env
+.vscode
