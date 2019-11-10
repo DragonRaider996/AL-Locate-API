@@ -20,5 +20,8 @@ module.exports = {
   "subscribers": [
     "src/subscriber/**/*.ts"
   ],
-  "synchronize": false
+  "synchronize": false,
+  "ssl": {
+    "rejectUnauthorized": false
+  }
 }
