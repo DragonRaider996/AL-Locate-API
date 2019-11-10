@@ -3,7 +3,7 @@ import { HospitalController } from './hospital.controller';
 import { HospitalService } from './hospital.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Hospital } from './entity/hospital.entity';
-import { AuthenticationMiddleware } from 'src/login/auth.middleware';
+import { AuthenticationMiddleware } from '../login/auth.middleware';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Hospital])],
