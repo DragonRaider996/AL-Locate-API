@@ -2,10 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { getDistance } from 'geolib';
 import { Hospital } from './entity/hospital.entity';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 import { LocationDTO } from './dto/location.dto';
 import { HospitalInterface } from './interface/listHospital.interface';
 import { sortBy, omit } from 'lodash';
+import { UpdateHospitalDTO } from './dto/updateHospital.dto';
 
 
 @Injectable()
@@ -56,6 +57,20 @@ export class HospitalService {
     let reachingTime: number = distance / ((40 * 1000) / 60);
     let averageWaitingTime = averagePatientWaitingTime + reachingTime;
     return averageWaitingTime;
+  }
+
+  async updateHospitalDetails(id: number, details: UpdateHospitalDTO): Promise<Hospital> {
+    let data: UpdateResult = await this.hospitalRepository.update({ id: id }, details);
+    if (data) {
+      return this.getHospitalDetials(id);
+    } else {
+      return null;
+    }
+
+  }
+
+  async getHospitalDetials(id: number): Promise<Hospital> {
+    return this.hospitalRepository.findOne({ id: id });
   }
 
 }

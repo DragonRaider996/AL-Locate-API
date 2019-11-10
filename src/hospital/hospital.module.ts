@@ -13,7 +13,9 @@ import { AuthenticationMiddleware } from '../login/auth.middleware';
 export class HospitalModule implements NestModule {
 
   configure(consumer: import("@nestjs/common").MiddlewareConsumer) {
-    consumer.apply(AuthenticationMiddleware).forRoutes({ path: 'hospital', method: RequestMethod.POST })
+    consumer.apply(AuthenticationMiddleware).forRoutes(
+      { path: 'hospital', method: RequestMethod.POST },
+      { path: 'hospital/:id', method: RequestMethod.PUT })
   }
 
 }
