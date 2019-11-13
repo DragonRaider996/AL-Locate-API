@@ -17,6 +17,7 @@ export class HospitalService {
   constructor(@InjectRepository(Hospital) private hospitalRepository: Repository<Hospital>) { }
 
   async getHospitalList(location: LocationDTO): Promise<HospitalInterface[]> {
+    this.hospitalData = [];
     this.hospitals = await this.hospitalRepository.find();
     this.hospitals.forEach((hospital) => {
       let distance: number = this.getHospitalDistance(hospital, location);
