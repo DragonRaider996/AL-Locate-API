@@ -9,6 +9,9 @@ export class Hospital {
   @Column({ type: "varchar", length: "250" })
   name: string;
 
+  @Column({ type: "varchar", length: "500" })
+  address: string;
+
   @Column({ type: "double" })
   hlat: number;
 

@@ -25,6 +25,7 @@ export class HospitalService {
       let hospitalToSend: HospitalInterface = {
         id: hospital.id,
         name: hospital.name,
+        address: hospital.address,
         hlat: hospital.hlat,
         hlong: hospital.hlong,
         waitingTime: averageWaitingTime
@@ -32,11 +33,6 @@ export class HospitalService {
       this.hospitalData.push(hospitalToSend);
     })
     this.hospitalData = sortBy(this.hospitalData, ['waitingTime']);
-    let tempData = this.hospitalData;
-    this.hospitalData = [];
-    tempData.forEach((hospital) => {
-      this.hospitalData.push(omit(hospital, "waitingTime"));
-    })
     return this.hospitalData;
   }
 
@@ -55,7 +51,7 @@ export class HospitalService {
     let averagePatientWaitingTime: number = averageOutgoingTime * hospital.waitingPatient;
     let reachingTime: number = distance / ((40 * 1000) / 60);
     let averageWaitingTime = averagePatientWaitingTime + reachingTime;
-    return averageWaitingTime;
+    return Number(averageWaitingTime.toFixed(2));
   }
 
   async updateHospitalDetails(id: number, details: UpdateHospitalDTO): Promise<Hospital> {
