@@ -5,8 +5,8 @@ import { UpdateTrackingDTO } from './dto/updateTracking.dto';
 import { CreateTransferInterface } from './interface/createTransfer.interface';
 import { TransferHistoryInterface } from './interface/transferHistory.interface';
 import { TrackDetailsInterface } from './interface/trackDetails.interface';
-import { UserInterface } from 'src/login/interface/user.interface';
-import { User } from 'src/login/user.decorator';
+import { UserInterface } from '../login/interface/user.interface';
+import { User } from '../login/user.decorator';
 
 @Controller('transfer')
 export class TransferController {

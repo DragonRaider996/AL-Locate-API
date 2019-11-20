@@ -5,8 +5,8 @@ import { HospitalInterface } from './interface/listHospital.interface';
 import { UpdateHospitalDTO } from './dto/updateHospital.dto';
 import { Hospital } from './entity/hospital.entity';
 import { HospitalStatsInterface } from './interface/hospitalStats.interface';
-import { UserInterface } from 'src/login/interface/user.interface';
-import { User } from 'src/login/user.decorator';
+import { UserInterface } from '../login/interface/user.interface';
+import { User } from '../login/user.decorator';
 
 @Controller('hospital')
 export class HospitalController {

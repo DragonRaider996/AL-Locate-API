@@ -3,10 +3,10 @@ import { TransferController } from './transfer.controller';
 import { TransferService } from './transfer.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Transfer } from './entity/transfer.entity';
-import { HospitalModule } from 'src/hospital/hospital.module';
+import { HospitalModule } from '../hospital/hospital.module';
 import { Track } from './entity/track.entity';
-import { AmbulanceAuthenticationMiddleware } from 'src/login/ambulanceAuth.middleware';
-import { HospitalAuthenticationMiddleware } from 'src/login/hospitalAuth.middleware';
+import { AmbulanceAuthenticationMiddleware } from '../login/ambulanceAuth.middleware';
+import { HospitalAuthenticationMiddleware } from '../login/hospitalAuth.middleware';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Transfer, Track]), HospitalModule],

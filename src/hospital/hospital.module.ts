@@ -4,7 +4,7 @@ import { HospitalService } from './hospital.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Hospital } from './entity/hospital.entity';
 import { AmbulanceAuthenticationMiddleware } from '../login/ambulanceAuth.middleware';
-import { HospitalAuthenticationMiddleware } from 'src/login/hospitalAuth.middleware';
+import { HospitalAuthenticationMiddleware } from '../login/hospitalAuth.middleware';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Hospital])],

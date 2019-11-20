@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm';
-import { Hospital } from 'src/hospital/entity/hospital.entity';
+import { Hospital } from '../../hospital/entity/hospital.entity';
 
 @Entity("transfer")
 export class Transfer {

@@ -3,7 +3,7 @@ import { Transfer } from './entity/transfer.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 import { CreateTransferDTO } from './dto/createTransfer.dto';
-import { HospitalService } from 'src/hospital/hospital.service';
+import { HospitalService } from '../hospital/hospital.service';
 import { CreateTransferInterface } from './interface/createTransfer.interface';
 import { TransferHistoryInterface } from './interface/transferHistory.interface';
 import { TrackDetailsInterface } from './interface/trackDetails.interface';
