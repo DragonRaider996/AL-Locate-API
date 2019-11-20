@@ -7,6 +7,7 @@ import { LocationDTO } from './dto/location.dto';
 import { HospitalInterface } from './interface/listHospital.interface';
 import { sortBy, omit } from 'lodash';
 import { UpdateHospitalDTO } from './dto/updateHospital.dto';
+import { HospitalStatsInterface } from './interface/hospitalStats.interface';
 
 
 @Injectable()
@@ -66,6 +67,16 @@ export class HospitalService {
 
   async getHospitalDetials(id: number): Promise<Hospital> {
     return this.hospitalRepository.findOne({ id: id });
+  }
+
+  async getHospitalStats(id: number): Promise<HospitalStatsInterface> {
+    let hospitalDetails: Hospital = await this.getHospitalDetials(id);
+    let hospitalStats: HospitalStatsInterface = {
+      waitingPatient: hospitalDetails.waitingPatient,
+      outgoingPatient: hospitalDetails.outgoingPatient,
+      admittedPatient: hospitalDetails.admittedPatient
+    }
+    return hospitalStats;
   }
 
 }

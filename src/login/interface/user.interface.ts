@@ -1,5 +1,7 @@
 export interface UserInterface {
-  id: number;
+  userId: number;
   role: string;
+  iat?: number;
+  exp?: number;
   token?: string;
 }

@@ -14,4 +14,7 @@ export class User {
 
   @Column({ type: "varchar", length: "250", name: "role" })
   role: string;
+
+  @Column({ type: "varchar", length: "250", name: "user_id" })
+  userId: number;
 }

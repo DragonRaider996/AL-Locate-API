@@ -14,7 +14,7 @@ export class LoginService {
 
   async validateUser(user: UserDTO): Promise<UserInterface> {
     this.userData = await this.userRepository.findOne({
-      select: ["id", "role"],
+      select: ["userId", "role"],
       where: { username: user.username, password: user.password }
     });
     return this.userData;
@@ -23,7 +23,7 @@ export class LoginService {
   createToken(userData: UserInterface): string {
     const secret: string = process.env.SECRET;
     const token: string = sign({
-      id: userData.id,
+      userId: userData.userId,
       role: userData.role
     }, secret, { expiresIn: "60d" });
     return token;
