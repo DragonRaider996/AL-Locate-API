@@ -22,7 +22,6 @@ export class TransferModule implements NestModule {
     consumer.apply(HospitalAuthenticationMiddleware).forRoutes(
       { path: 'transfer', method: RequestMethod.GET },
       { path: 'transfer', method: RequestMethod.POST },
-      { path: 'transfer/:id', method: RequestMethod.GET },
       { path: 'transfer/track/:id', method: RequestMethod.GET }
     )
   }
