@@ -9,7 +9,7 @@ Clone the repository and run the following instructions:
 * npm install
 * npm run start
 
-Currently the application will not run as it requires a .env file with the database credentials.
+The application will not run as it requires a .env file with the database credentials.
 
 ## Code Quality
 This application is built using the NestJS framework, and it is following all the quality standards defined by the framework. Every similar functionality were grouped into one module and every module has its own dto (data transfer object), model(to connect with the database) and interface (to interact within the application) folders to interact with the request data and database. I have made sure that every function can be as small as possible and self explainatory.
