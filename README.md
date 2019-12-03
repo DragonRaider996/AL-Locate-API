@@ -28,3 +28,7 @@ Each user cannot use the other's API and are restricted to their own set of APIs
 
 ## Analytics
 We currently are not recording any analytics from the user. This is one of the furture scope of our application.
+
+## References
+* https://github.com/lujakob/nestjs-realworld-example-app
+* https://docs.nestjs.com/
