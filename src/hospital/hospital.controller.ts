@@ -1,9 +1,12 @@
-import { Controller, Post, Body, Put, Param, HttpException, HttpStatus, Query } from '@nestjs/common';
+import { Controller, Post, Body, Put, Param, HttpException, HttpStatus, Query, Get } from '@nestjs/common';
 import { HospitalService } from './hospital.service';
 import { LocationDTO } from './dto/location.dto';
 import { HospitalInterface } from './interface/listHospital.interface';
 import { UpdateHospitalDTO } from './dto/updateHospital.dto';
 import { Hospital } from './entity/hospital.entity';
+import { HospitalStatsInterface } from './interface/hospitalStats.interface';
+import { UserInterface } from '../login/interface/user.interface';
+import { User } from '../login/user.decorator';
 
 @Controller('hospital')
 export class HospitalController {
@@ -24,4 +27,10 @@ export class HospitalController {
       throw new HttpException("Error", HttpStatus.BAD_REQUEST);
     }
   }
+
+  @Get("/stats")
+  async getHospitalStats(@User() user: UserInterface): Promise<HospitalStatsInterface> {
+    return this.hospitalService.getHospitalStats(user.userId);
+  }
+
 }
