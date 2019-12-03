@@ -1,7 +1,7 @@
 # Allocate Backend
 
 ## Completeness
-This is a fully functional prototype for the backend of the application. There are currently no known bugs in the application. The application is deployed to the Heroku and the URL for the backend is as follows : https://accordallocate.herokuapp.com. The application uses NestJS which is based on Typescript and it provides the typesafety by default. The application uses MYSQL as the backend.
+This is a fully functional prototype for the backend of the application. There are currently no known bugs in the application. The application is deployed to the Heroku and the URL for the backend is as follows : https://accordallocate.herokuapp.com. The application uses NestJS which is based on Typescript and it provides the typesafety by default. The application uses MYSQL as the backend database.
 
 **Intructions to run**
 
